@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  border: 1px solid red;
+  padding: 15px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>TDP001 Hemsida danhu849</h1>
+</div>
+
+<div class="row">
+
+
+<div class="col-4">
+  <ul>
+    <li>Terminaluppgift 2.1</li>
+    <li>Terminaluppgift 2.2</li>
+    <li>Terminaluppgift 2.3</li>
+    <li>Terminaluppgift 2.4</li>
+    <li>Terminaluppgift 2.5</li>
+    <li>Terminaluppgift 2.6</li>
+  </ul>
+</div>
+
+<div class="col-8">
+<h1>Hur texten ska tolkas:</h1>
+<p><i>Kursiv text</i> representerar knapptryckningar.</p>
+<p>Varje deluppgift utgår ifrån att terminalen börjar i ~</p>
+<p><b>Fetstil text</b> indikerar text som skrivs i terminalfönstret</p>
+</div>
+<div class="col-8">
+  <h1>2.1 Kataloger och filer</h1>
+  <p>Öppnar terminal genom att trycka <i>Ctrl ALT T</i> samtidigt</p>
+  <p>Skapar katalogen ~/TDP004/lab1 med mkdir (make directory)</p>
+  <p><b>mkdir -p ~/TDP004/lab1</b></p>
+  <p>Använde flaggan -p så att det inte skulle bildas några errors ifall mappen/mapparna redan fanns samt om nödvändigt skapa kataloger ovanför i katalogträdet.</p></p>
+  <p>Skapade en README.md i katalogen ~/TDP004 och skrev någonting i den.
+  <p><b>echo "någonting" > TDP004/README.md</b></p>
+  <p><b>echo</b> återupprepar strängen innanför ""</p>
+  <p><b>></b> skapar filen README.md och lägger till det som echo återupprepar. I det här fallet skapas filen med strängen <i>någonting</i> i. Hade filen redan funnits hade den skrivits över med den nya strängen.</p>
+  <p>Säkerställer att README.md filen skapats och att det står någonting i den.</p>
+  <p><b>cat TDP004/README.md</b></p>
+  <p>Sätter namnet för repot på gitlab.liu.se som automatiskt kommer skapas vid push</p>
+  <p><b>git remote add origin https://gitlab.liu.se/[liuid]/TDP004.git</b></p>
+  <p>Går in i mappen /TDP004</p>
+  <p><b>cd TDP004</b></p>
+  <p>Skapar nytt lokalt repo inuti TDP004 katalogen.</p>
+  <p><b>git init</b></p>
+  <p>Addera samtliga filer i TDP004 till commit.</p>
+  <p><b>git add *</b></p>
+  <p>Kolla så att filerna är tillagda till kommande commit.</p>
+  <p><b>git status</b></p>
+  <p>Commit:a, dvs spara lokala repo-ändringar som gjorts.</p>
+  <p>Ändringar i repot kan betyda nya filer, borttagning av filer eller förändringar i filer/katalogstruktur.</p>
+  <p><b>git commit -a -m "Add readme"</b></p>
+  <ul>
+  	<li>-a flaggan commit:ar alla ändringar</li>
+    <li>-m flaggan möjliggör en förklaring till commit:en</li>
+  </ul>
+  <p><i>Ifall prompt:ad</i>, bestäm user.email och user.name:<p>
+  <p><b>git config --global user.name "[Ditt namn]"</b></p>
+  <p><b>git config --global user.email "[liuid]@gitlab.liu.se"</b></p>
+  <p><b>--global</b> flaggan bestämmer att dessa user.name och user.email gäller för samtliga repos på maskinen. Skriv sedan git commit igen:</p>
+  <p><b>git commit -a -m "Add readme"</b></p>
+  <p>Testa att push:a upp repot.</p>
+  <p><b>git push</b></p>
+  <p>Ges felmeddelandet: <i>fatal: The current branch master has no upstream branch.</i> Behövs upstream branch specificeras</p>
+  <p><b>git push --set-upstream origin master</b></p>
+  <p>Detta specificerar att repot inuti katalogen ~/TDP004 kommer pushas till origin som innan sattes att representera adressen till repot på gitlab.liu.se </p>
+  <p>Skriv in inloggningsuppgifter för liu-kontot på gitlab.</p>
+  <p>Vid completion kolla efter: <i>The private project [liuid]/TDP004 was successfully created.</i> Detta betyder att det nya repot med filer skapats på gitlab.liu.se</p>
+  <h2 style="color: green">Klart!</h2>
+</div>
+
+<div class="col-8 center">
+	<h1>2.2 Jobba via ssh</h1>
+    <p>Öppna först terminalen genom att trycka <i>Ctrl ALT T</i> samtidigt. Anslut sedan till kontot på student-domänen via ssh i terminalen. </p>
+    <p><b>ssh [liuid]@ssh.edu.liu.se</b></p>
+    <p>Skriv in lösenordet för liu-kontot.</p>
+    <p>Klona katalogen TD004 från gitlab.liu.se/[liuid]TDP004.git</p>
+    <p><b>git clone https://gitlab.liu.se/danhu849/TDP004.git</b></p>
+    <p>Gå in i katalogen med cd (change directory)</p>
+    <p><b>cd TDP004/</b></p>
+    <p>Skapa en ny katalog . . . /TDP004/lab2/documentation utan att först skapa /lab2</p>
+    <p><b>mkdir -p lab2/documentation</b></p>
+    <p>Skapa katalogen lab1 med filen lab1.cc</p>
+    <p><b>mkdir lab1 && touch lab1/lab1.cc</b></p>
+    <p>Även om lab1 fanns i det ursprungliga repot som pushades upp så följer inte tomma kataloger med. Därför skapas den här igen. Nu när katalogen innehåller något kommer den pushas upp på gitlab.</p>
+    <p><b>touch</b> kommandot skapar en ny fil, lab1.cc</p>
+    <p><b>&&</b> möjliggör att flera terminalkommandon körs i följd. Här skapas först katalogen lab1 sedan skapas filen lab1.cc i katalog lab1</p>
+    <p>Skapa filen lab2.cc och lab2.h i katalogen lab2</p>
+    <p><b>touch lab1/lab2.cc && touch lab1/lab2.h</b></p>
+    <p>Flytta båda lab 2 filerna till katalogen lab2</p>
+    <p><b>mv lab1/lab2.cc lab2 && mv lab1/lab2.h lab2</b></p>
+    <p>Flyttar först lab2.cc från katalogen lab1 till katalogen lab2 sen flyttas lab2.h från katalogen lab1 till katalogen lab2</p>
+    <p>Kolla filsystemets trädstruktur med tree. Det ska se ut som bilden nedan.</p>
+    <p><b>tree .</b></p>
+    <img src="tree.png" alt="Tree Structure pic">
+    <p>Ändra innehållet i README.md med valfri editor, öppna med nano</p>
+    <p><b>nano lab2/README.md</b></p>
+    <p>Skriv något sen spara genom att trycka på <i>CTRL O</i>. Stäng sedan nano genom att trycka <i>CTRL X</i></p>
+    <p>Skapa filen junk.temp i katalogen TDP004</p>
+    <p><b>touch junk.temp</b></p>
+    <p>Skapa en git-ignore fil som ignorerar alla filer som slutar med ‘~’ och‘.temp’. Öppna .gitignore med nano.</p>
+    <p><b>nano .gitignore</b></p>
+    <p>Skriv såsom på bilden nedan. Spara genom att trycka på <i>CTRL O</i>, sen <i>ENTER</i> .</p>
+    <img src="nano_gitignore.png" alt="nano .gitignore pic">
+    <p> Stäng nano genom att trycka <i>CTRL X</i>.</p>
+    <p>Knuffa upp alla ändringar (utom .temp-filen) till git. Då .gitignore filen gör att .temp filer inte adderas vid commit kan vi commit:a och pusha upp som vanligt. </p>
+    <p><b>git add *</b></p>
+    <p>Dock måste .gitignore filen läggas till manuellt.</p>
+    <p><b>git add .gitignore</b></p>
+    <p>Se till att git status skriver ut som på bilden:</p>
+    <img src="git_status.png" alt="git status pic">
+    <p>Commit:a filerna och lägg till commit meddelande.</p>
+    <p><b>git commit -am "added lab1 and lab2 directories with files"</b></p>
+    <p>Försök pusha upp det.</p>
+    <p><b>git push</b></p>
+    <p>Ifall det kommer upp något i stil med <i>Your name and e-mail address were configured automatically based on your username and hostname</i> betyder det att hostnamnet lagts till som email för inloggning på gitlab.liu.se. Detta är fel och ändras med:</p>
+    <p><b>git config --global --edit</b></p>
+    <img src="git-config_global_edit.png" alt="git_config pic">
+    <p>Du är nu i en editor i terminalen och kan ändra email till det för ditt gitlab konto. Flytta dig med piltangenterna. Glöm inte att ta bort # tecknena längst ut till vänster på raderna med "name =" och "email =" då de gör att raderna inte läses in.</p>
+    <img src="email_for_gitlab.png" alt="email for gitlab pic">
+    <p>Spara och stäng genom att trycka på knappen <i>F1</i></p>
+    <p>Sätt global user.name till "[liuid]"</p>
+    <p><b>git config --global user.name "danhu849"</b></p>
+    <p>Sätt global user.email till "[liuid]@gitlab.liu.se"</p>
+    <p><b>git config --global user.email danhu849@gitlab.liu.se</b></p>
+    <p>Push:a upp</p>
+    <p><b>git push</b></p>
+    <p>Fyll i inloggningsuppgifter för gitlab.liu.se kontot</p>
+    <p>Vänta på att det laddats upp.</p>
+    <p>Logga ut från ssh med kommandot:</p>
+    <p><b>logout</b></p>
+    <h2 style="color: green">Klart!</h2>
+</div>
+
+
+<div class="col-8">
+	<h1>2.3 Lösa en konflikt</h1>
+    <p>Framkalla en merge konflikt genom att skriva något i den lokala TDP004/README.md filen</p>
+    <p><b>echo "Här kommer det bli en merge konflikt!" > TDP004/README.md</b></p>
+    <p>Byt katalog till TDP004</p>
+    <p><b>cd TDP004/</b></p>
+    <p>Addera README.md till commit</p>
+    <p><b>git add README.md</b></p>
+    <p>Commit:a med lämpligt medd</p>
+    <p><b>git commit -ma "changes to readme"</b></p>
+    <p>Hämta ner det som finns på gitlab.</p>
+    <p><b>git pull</b></p>
+    <p>Nu blir det en merge konflikt med README.md filen</p>
+    <p>Lös konflikten med valfri editor<p>
+    <p><b>emacs README.md</b></p>
+    <img src="emacs_merge_conflict.png" alt="emacs merge conflict visual pic">
+    <p>Det som finns mellan &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD och ======= är det som finns i den lokala README.md filen. Det som står mellan ======= och &gt;&gt;&gt;&gt;&gt;&gt;&gt; "den långa teckensträngen" är det som står i README.md filen man hämtar ner från gitlab.liu.se </p>
+    <p>Teckensträngen representerar adressen för noden i master branch på gitlab.liu.se</p>
+    <p>När ändringarna är klara, spara README.md filen, stäng editorn och addera den till commit med git add</p>
+    <p><b>git add README.md</b></p>
+    <p>Kolla så att filerna som ska hämtas är rätt</p>
+    <p><b>git status</b></p>
+    <p>Commit:a ändringarna med git commit och skriv i medd vilken lösning som valdes.</p>
+    <p><b>git commit -am "Solved merge conflict. Using state from origin/master"</b></p>
+    <p>Eftersom jag använder state från gitlab.liu.se versionen är det nu klart, men bara för säkerhets skull pusha upp igen för att se så att de är samma.</p>
+    <p><b>git push</b>
+    <h2 style="color: green">Klart!</h2>    
+</div>
+
+
+<div class="col-8">
+	<h1>2.4 Rättigheter och skriva till fil</h1>
+    <p>Gå in i katalogen TDP004/</p>
+    <p><b>cd TDP004/</b></p>
+    <p>Skapa filen test.py i katalogen TDP004.</p>
+    <p><b>touch test.py</b></p>
+    <p>Skriv ett enkelt program (ex-empelvis hello world) och gör så filen kan köras direkt med kommandot./test.py   Öppna med test.py i nano och skriv överst: #!/usr/bin/env python3</p>
+    <p>Strängen är en s.k. shebang och gör så att operativsystemet känner igen filen som ett python3 program. Filen blir också lättare att flytta mellan olika maskiner ifall python3 är installerat på olika ställen.</p>
+    <p>Lägg med kommandot ‘echo’ till följande kommentar i test.py: “Detta är en kommentar som skapats med echo”</p>
+    <p><b>echo #Detta är en kommentar som skapats med echo >> test.py</b></p>
+    <p>Kopiera underkatalogen lab2 så du får en ny katalog lab3</p>
+    <p><b>cp -r lab2/ lab3/</b></p>
+    <p>cp kopierar. flaggan -r läggs till för att kunna kopiera kataloger med dess innehåll rekursivt.</p>
+    <p>Gå in i lab3 katalogen</p>
+    <p><b>cd lab3/</b></p>
+    <p>Byt namn på alla filerna i lab3 så de har lab3 istället för lab2 i filnam-nen.</p>
+    <p><b>mv lab2.cc lab3.cc && mv lab2.h lab3.h</b></p>
+    <p>Kopiera sedan katalogen lab1 från ditt konto på studentdomänen så du får en katalog som nu heter lab4 mha scp. Använd flaggan -r då lab1 är en katalog med filer.</p>
+    <p><b>scp -r ssh.edu.liu.se:~/TDP004/lab1 ./lab4</b></p>
+    <p>Byt namn på /lab4/lab1.cc till lab4/lab4.cc</p>
+    <p><b>mv /lab4/lab1.cc lab4/lab4.cc</b></p>
+    <h2 style="color: green">Klart!</h2>      
+</div>
+
+
+<div class="col-8">
+	<h1>2.5 Dokumentera katalogen</h1>
+    <p>Flytta in i katalogen TDP004/</p>
+    <p><b>cd TDP004/</b></p>
+    <p>Skriv katalogstrukturen, gärna som ett träd, för katalogen TDP004till README.md (skriv inte strukturen för hand för hand, hitta ett lämpligt kommando)</p>
+    <p>Installera tree om det inte redan finns på maskinen.</p>
+    <p><b>sudo apt install tree</b></p>
+    <p>Lista katalogstrukturen för TDP004 med kommandot tree</p>
+    <p><b>tree .</b></p>
+    <img src="tree_struc_tdp004.png" alt="Tree Structure for TDP004 pic">
+    <h2 style="color: green">Klart!</h2>
+</div>
+
+<div class="col-8">
+	<h1>2.6 Smått och gott</h1>
+	<p>Hitta alla filer som är körbara i din hemkatalog.</p>
+    <p><b>find ~ -executable -type f</b></p>
+    <p>find letar efter filer hierarkiskt nedåt från en specificerad katalog. flaggan -executable filtrerar fram alla exekverbara entiteter och -type f specificerar att entiteterna ska vara av typen filer. </p>
+    <p><b></b></p>
+    <p><b></b></p>
+    <h2 style="color: green">Klart!</h2>
+</div>
+
+</body>
+</html>
