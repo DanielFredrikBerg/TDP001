@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
 <style>
 * {
   box-sizing: border-box;
@@ -199,9 +199,9 @@ li a {
   <p>--set-upstream sätter TDP001-gitlab, dvs https://gitlab.liu.se/danhu849/TDP001.git, som default repo att pusha till nästa gång ett git push aktiveras i denna katalogen.</p>
   <p>Logga in med inloggningsuppgifter för gitlab konto.</p>
   <p>När push:en lyckats fås något i stil med:</p>
-  <img src="project_creation_complete_w_git_push.png" alt="project_creation pic">
+  <img src="./Pictures/project_creation_complete_w_git_push.png" alt="project_creation pic">
   <p>Denna katalog är nu knutet till repot och push respektive pull kommer per default ske till https://gitlab.liu.se/danhu849/TDP001.git</p>
-  <p><b></b></p>
+  <p><a href="https://gitlab.liu.se/danhu849/TDP001">Länk till gitlab projektet.</p>
   <h2 style="color: green">Klart!</h2>
 </div>
 
@@ -272,7 +272,7 @@ li a {
     <p>Flyttar först lab2.cc från katalogen lab1 till katalogen lab2 sen flyttas lab2.h från katalogen lab1 till katalogen lab2</p>
     <p>Kolla filsystemets trädstruktur med tree. Det ska se ut som bilden nedan.</p>
     <p><b>tree .</b></p>
-    <img src="tree.png" alt="Tree Structure pic">
+    <img src="./Pictures/tree.png" alt="Tree Structure pic">
     <p>Ändra innehållet i README.md med valfri editor, öppna med nano</p>
     <p><b>nano lab2/README.md</b></p>
     <p>Skriv något sen spara genom att trycka på <i>CTRL O</i>. Stäng sedan nano genom att trycka <i>CTRL X</i></p>
@@ -281,23 +281,23 @@ li a {
     <p>Skapa en git-ignore fil som ignorerar alla filer som slutar med ‘~’ och‘.temp’. Öppna .gitignore med nano.</p>
     <p><b>nano .gitignore</b></p>
     <p>Skriv såsom på bilden nedan. Spara genom att trycka på <i>CTRL O</i>, sen <i>ENTER</i> .</p>
-    <img src="nano_gitignore.png" alt="nano .gitignore pic">
+    <img src="./Pictures/nano_gitignore.png" alt="nano .gitignore pic">
     <p> Stäng nano genom att trycka <i>CTRL X</i>.</p>
     <p>Knuffa upp alla ändringar (utom .temp-filen) till git. Då .gitignore filen gör att .temp filer inte adderas vid commit kan vi commit:a och pusha upp som vanligt. </p>
     <p><b>git add *</b></p>
     <p>Dock måste .gitignore filen läggas till manuellt.</p>
     <p><b>git add .gitignore</b></p>
     <p>Se till att git status skriver ut som på bilden:</p>
-    <img src="git_status.png" alt="git status pic">
+    <img src="./Pictures/git_status.png" alt="git status pic">
     <p>Commit:a filerna och lägg till commit meddelande.</p>
     <p><b>git commit -am "added lab1 and lab2 directories with files"</b></p>
     <p>Försök pusha upp det.</p>
     <p><b>git push</b></p>
     <p>Ifall det kommer upp något i stil med <i>Your name and e-mail address were configured automatically based on your username and hostname</i> betyder det att hostnamnet lagts till som email för inloggning på gitlab.liu.se. Detta är fel och ändras med:</p>
     <p><b>git config --global --edit</b></p>
-    <img src="git-config_global_edit.png" alt="git_config pic">
+    <img src="./Pictures/git-config_global_edit.png" alt="git_config pic">
     <p>Du är nu i en editor i terminalen och kan ändra email till det för ditt gitlab konto. Flytta dig med piltangenterna. Glöm inte att ta bort # tecknena längst ut till vänster på raderna med "name =" och "email =" då de gör att raderna inte läses in.</p>
-    <img src="email_for_gitlab.png" alt="email for gitlab pic">
+    <img src="./Pictures/email_for_gitlab.png" alt="email for gitlab pic">
     <p>Spara och stäng genom att trycka på knappen <i>F1</i></p>
     <p>Sätt global user.name till "[liuid]"</p>
     <p><b>git config --global user.name "danhu849"</b></p>
@@ -328,7 +328,7 @@ li a {
     <p>Nu blir det en merge konflikt med README.md filen</p>
     <p>Lös konflikten med valfri editor<p>
     <p><b>emacs README.md</b></p>
-    <img src="emacs_merge_conflict.png" alt="emacs merge conflict visual pic">
+    <img src="./Pictures/emacs_merge_conflict.png" alt="emacs merge conflict visual pic">
     <p>Det som finns mellan &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD och ======= är det som finns i den lokala README.md filen. Det som står mellan ======= och &gt;&gt;&gt;&gt;&gt;&gt;&gt; "den långa teckensträngen" är det som står i README.md filen man hämtar ner från gitlab.liu.se </p>
     <p>Teckensträngen representerar adressen för noden i master branch på gitlab.liu.se</p>
     <p>När ändringarna är klara, spara README.md filen, stäng editorn och addera den till commit med git add</p>
@@ -377,7 +377,7 @@ li a {
     <p><b>sudo apt install tree</b></p>
     <p>Lista katalogstrukturen för TDP004 med kommandot tree</p>
     <p><b>tree .</b></p>
-    <img src="tree_struc_tdp004.png" alt="Tree Structure for TDP004 pic">
+    <img src="./Pictures/tree_struc_tdp004.png" alt="Tree Structure for TDP004 pic">
     <h2 style="color: green">Klart!</h2>
 </div>
 
