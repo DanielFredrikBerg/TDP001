@@ -201,7 +201,7 @@ li a {
   <p>När push:en lyckats fås något i stil med:</p>
   <img src="./Pictures/project_creation_complete_w_git_push.png" alt="project_creation pic">
   <p>Denna katalog är nu knutet till repot och push respektive pull kommer per default ske till https://gitlab.liu.se/danhu849/TDP001.git</p>
-  <p><a href="https://gitlab.liu.se/danhu849/TDP001">Länk till gitlab projektet.</p>
+  <p><a href="https://gitlab.liu.se/danhu849/TDP001">Länk till gitlab projektet.</a></p>
   <h2 style="color: green">Klart!</h2>
 </div>
 
