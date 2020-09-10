@@ -219,7 +219,7 @@ li a {
   <p>Skriv ut alla filnamn från mappen /usr/lib som har ändelsen .so* till fil med lämpligt namn. Filnamnen ej innehålla punkten och ändelsen.</p>
   <p><b>ls | grep -e '\.so' | tr -d '.so*' > ~/so-fil.txt</b></p>
   <p>ls listar allt i katalogen. Av det möjliggör grep med flaggan -e att specifikt bara filtrera fram alla de filnamn som innehåller .so. Av dessa tas allting efter .so bort med tr -d. Namnen skrivs sedan in i filen so-fil.txt i hemkatalogen med > </p>
-   <img src="./Pictures/so-fil.txt" alt="so-fil pic">
+   <img src="./Pictures/so-fil.png" alt="so-fil pic">
   <p>Ge ett kommando som (endast) skriver ut hur många rader i filen som har ett namn som har bokstäverna "an" efter varandra.</p>
   <p><b>grep -i -e 'an' resultat.txt -c</b></p>
   <p>-i flaggan specificerar att grep -e 'an' inte ska skilja på gemener och versaler. -c flaggan gör att grep bara räknar så många rader som innehåller söktermen.</p>
