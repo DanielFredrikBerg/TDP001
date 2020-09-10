@@ -214,15 +214,16 @@ li a {
   <p>Med grep kan man leta efter specifika mönster av tecken i filer. grep skriver ut varje rad i filen som innehåller det specificerade sökmönstret. Lyckligtvis slutar varje namn på 'on' som har 'on' i sig så det behövs ingen mer komplicerad grep variant än den ovan.</p>
   <p>Skriv ut de första fem efternamnen som inte avslutas med "son".</p>
   <p><b>grep -v 'son' resultat.txt | head -n5</b></p>
-   <img src="./Pictures/grep_-v_head_-n5.png" alt="grep -v | head -n5">
+   <img src="./Pictures/grep_-v_head_-n5.png" alt="grep -v | head -n5 pic">
   <p>-v flaggan instruerar grep att bara ta de rader som inte har sökmönstret, 'son' i sig. Utdatan från grep, dvs alla rader som inte har 'son' i sig, pipe:as (förs vidare) till head kommandot. head kommandot presenterar det översta innehållet från en läst fil om denna är specificerad annars läser head från input. I detta fall blir head:s input grep:s output. Med flaggan -n5 bestämms det att bara de fem första resultaten ska skrivas ut.</p>
   <p>Skriv ut alla filnamn från mappen /usr/lib som har ändelsen .so* till fil med lämpligt namn. Filnamnen ej innehålla punkten och ändelsen.</p>
-  <p><b></b></p>
-  <p></p>
-  <p><b></b></p>
-  <p></p>
-  <p><b></b></p>
-  <p></p>
+  <p><b>ls | grep -e '\.so' | tr -d '.so*' > ~/so-fil.txt</b></p>
+  <p>ls listar allt i katalogen. Av det möjliggör grep med flaggan -e att specifikt bara filtrera fram alla de filnamn som innehåller .so. Av dessa tas allting efter .so bort med tr -d. Namnen skrivs sedan in i filen so-fil.txt i hemkatalogen med > </p>
+   <img src="./Pictures/so-fil.txt" alt="so-fil pic">
+  <p>Ge ett kommando som (endast) skriver ut hur många rader i filen som har ett namn som har bokstäverna "an" efter varandra.</p>
+  <p><b>grep -i -e 'an' resultat.txt -c</b></p>
+  <p>-i flaggan specificerar att grep -e 'an' inte ska skilja på gemener och versaler. -c flaggan gör att grep bara räknar så många rader som innehåller söktermen.</p>
+  <img src="./Pictures/grep_rader_an.png" alt="grep 7 rader an">
   <p><b></b></p>
   <p></p>
   <p><b></b></p>
