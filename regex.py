@@ -1,6 +1,18 @@
+#!/usr/bin/env python3
+from bs4 import BeautifulSoup as bs
+import requests
 import re
-import urllib.request
 
-with open('index.html', 'r') as web_page:
-    html_text = web_page.read()
-    print(html_text)
+with open ('./app/templates/index.html', 'r') as f:
+    contents = f.read()
+    soup = bs(contents, 'lxml')
+    string_soup = str(soup)
+    e = re.findall(r'(\<\w*\>)|(\<\/\w*\>)', string_soup)
+    #m = re.findall(r'', string_soup)
+    for entity in e:
+        if entity[0] != '':
+            print(entity[0])
+        elif entity[1] != '':
+            print(entity[1])
+        else:
+            continue
