@@ -129,6 +129,7 @@ li a {
 .col-10 {width: 83.33%;}
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
+
 </style>
 </head>
 <body>
@@ -158,8 +159,9 @@ li a {
 	<i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-	<a href="#TM35">Terminalmejl V35</a>
+	<a href="#TM37">Terminalmejl V37</a>
 	<a href="#TM36">Terminalmejl V36</a>
+	<a href="#TM35">Terminalmejl V35</a>	
       </div>
     </div>
   </div>
@@ -170,6 +172,59 @@ li a {
 <p><i>Kursiv text</i> representerar knapptryckningar.</p>
 <p>Varje deluppgift utgår ifrån att terminalen börjar i ~</p>
 <p><b>Fetstil text</b> indikerar text som skrivs i terminalfönstret</p>
+</div>
+
+<div class="col-9">
+  <h1 id="TM37">Terminalmejl V37</h1>
+  <p>Uppgift: Ett LiU-ID skrivs på formatet FEN där F är de tre första bokstäverna i förnamnet, E de två första i efternamnet och N är tal med två eller tre siffror (beroende på om det är en anställd eller student). Om förnamnet endast är två tecken långt blir den delen endast två tecken. Skriv ett mönster för att fånga ett LiU-ID.</p>
+  <p>Svar: [a-z]{4,5}[0-9]{2,3}</p>
+  <p>Uppgift: Ett datum i ISO-format skrivs YYYY-MM-DD. Skriv ett mönster för att fånga detta.</p>
+  <p>Svar: [0-9]{4}\-[0-9]{2}\-[0-9]{2}</p>
+  <p>Uppgift: Utöka ditt regexp från föregående uppgift för att även kontrollera datumets giltighet (full kontroll går inte då vi saknar logik men t.ex. är en månad som inleds med 9 felaktig).</p>
+  <p>Svar: ([1][0-9]{3}|[2][0][0-1][0-9]|[2][0][2][0])\-([0][1-9]|[1][0-2])\-([0-2][1-9]|[3][0-1])</p>
+  <p>Uppgift: Skriv ett Python-program som (med hjälp av reguljära uttryck) hittar och skriver ut alla element i ett html-dokument (t.ex. din webplats). Endast elementtypen ska skrivas ut, inte eventuella attribut som elementet har. Välj själv om programmet läser in dokumentet från en lokal fil eller använder sig av av en modul (exempelvis urllib) för att hämta en fil över internet.</p>
+  <p>Svar:</p>
+  <p><b></b></p>
+  <p></p>
+  <p><b></b></p>
+  <p></p>
+  <p><b></b></p>
+  <p></p>
+  <p><b></b></p>
+  <p></p>
+  <p><b></b></p>
+  <p></p>
+  <p><b></b></p>
+  <p></p>
+  <p><b></b></p>
+  <p></p>
+  <p><b></b></p>
+  
+</div>
+
+
+<div class="col-9">
+  <h1 id="TM36">Terminalmejl V36</h1>
+  <p>Öppna först filen <a href="./resultat.txt">resultat.txt</a> och spara den på lämplig plats. Gå sedan in med terminalen till katalogen där du har sparat den.</p>
+  <p><b>cd /TDP001</b></p>
+  <p>Skriv ut alla rader med hjälp av grep från resultat.txt filen vars förnamn eller efternamn slutar på 'on'.</p>
+  <p><b>grep 'on' resultat.txt</b></p>
+  <img src="./Pictures/TM35-uppg-1.png" alt="grep 'on'">
+  <p>Med grep kan man leta efter specifika mönster av tecken i filer. grep skriver ut varje rad i filen som innehåller det specificerade sökmönstret. Lyckligtvis slutar varje namn på 'on' som har 'on' i sig så det behövs ingen mer komplicerad grep variant än den ovan.</p>
+  <p>Skriv ut de första fem efternamnen som inte avslutas med "son".</p>
+  <p><b>grep -v 'son' resultat.txt | head -n5</b></p>
+   <img src="./Pictures/grep_-v_head_-n5.png" alt="grep -v | head -n5 pic">
+  <p>-v flaggan instruerar grep att bara ta de rader som inte har sökmönstret, 'son' i sig. Utdatan från grep, dvs alla rader som inte har 'son' i sig, pipe:as (förs vidare) till head kommandot. head kommandot presenterar det översta innehållet från en läst fil om denna är specificerad annars läser head från input. I detta fall blir head:s input grep:s output. Med flaggan -n5 bestämms det att bara de fem första resultaten ska skrivas ut.</p>
+  <p>Skriv ut alla filnamn från mappen /usr/lib som har ändelsen .so* till fil med lämpligt namn. Filnamnen ej innehålla punkten och ändelsen.</p>
+  <p><b>ls | grep -e '\.so' | tr -d '.so*' > ~/so-fil.txt</b></p>
+  <p>ls listar allt i katalogen. Av det möjliggör grep med flaggan -e att specifikt bara filtrera fram alla de filnamn som innehåller .so. Av dessa tas allting efter .so bort med tr -d. Namnen skrivs sedan in i filen so-fil.txt i hemkatalogen med > </p>
+   <img src="./Pictures/so-fil.png" alt="so-fil pic">
+  <p>Ge ett kommando som (endast) skriver ut hur många rader i filen som har ett namn som har bokstäverna "an" efter varandra.</p>
+  <p><b>grep -i -e 'an' resultat.txt -c</b></p>
+  <p>-i flaggan specificerar att grep -e 'an' inte ska skilja på gemener och versaler. -c flaggan gör att grep bara räknar så många rader som innehåller söktermen.</p>
+  <img src="./Pictures/grep_rader_an.png" alt="grep 7 rader an">
+  <p>Ladda upp ett latex-dokument till din www-pub katalog (/wwwpub/liuid/TDP001/) som kompilerats utifrån mallen i TDP003. Om du inte vet var dokumentmallen finns på kurssidan i TDP003 är det dags att titta igenom den kurssidan. I det kompilerade dokumentet skall du ha uppdaterat sidhuvud och sidfot till ditt namn. Länka till detta dokument från din blogg.</p>
+  <p><a href="./Kompilerad_mall_med_mitt_namn.pdf" target="_blank">Kompilerad_mall_med_mitt_namn.pdf</a></p>  
 </div>
 
 <div class="col-9">
@@ -203,45 +258,6 @@ li a {
   <p><a href="https://gitlab.liu.se/danhu849/TDP001" target="_blank">Länk till gitlab projektet, öppnas i ny flik.</a></p>
   <h2 style="color: green">Klart!</h2>
 </div>
-
-<div class="col-9">
-  <h1 id="TM36">Terminalmejl V36</h1>
-  <p>Öppna först filen <a href="./resultat.txt">resultat.txt</a> och spara den på lämplig plats. Gå sedan in med terminalen till katalogen där du har sparat den.</p>
-  <p><b>cd /TDP001</b></p>
-  <p>Skriv ut alla rader med hjälp av grep från resultat.txt filen vars förnamn eller efternamn slutar på 'on'.</p>
-  <p><b>grep 'on' resultat.txt</b></p>
-  <img src="./Pictures/TM35-uppg-1.png" alt="grep 'on'">
-  <p>Med grep kan man leta efter specifika mönster av tecken i filer. grep skriver ut varje rad i filen som innehåller det specificerade sökmönstret. Lyckligtvis slutar varje namn på 'on' som har 'on' i sig så det behövs ingen mer komplicerad grep variant än den ovan.</p>
-  <p>Skriv ut de första fem efternamnen som inte avslutas med "son".</p>
-  <p><b>grep -v 'son' resultat.txt | head -n5</b></p>
-   <img src="./Pictures/grep_-v_head_-n5.png" alt="grep -v | head -n5 pic">
-  <p>-v flaggan instruerar grep att bara ta de rader som inte har sökmönstret, 'son' i sig. Utdatan från grep, dvs alla rader som inte har 'son' i sig, pipe:as (förs vidare) till head kommandot. head kommandot presenterar det översta innehållet från en läst fil om denna är specificerad annars läser head från input. I detta fall blir head:s input grep:s output. Med flaggan -n5 bestämms det att bara de fem första resultaten ska skrivas ut.</p>
-  <p>Skriv ut alla filnamn från mappen /usr/lib som har ändelsen .so* till fil med lämpligt namn. Filnamnen ej innehålla punkten och ändelsen.</p>
-  <p><b>ls | grep -e '\.so' | tr -d '.so*' > ~/so-fil.txt</b></p>
-  <p>ls listar allt i katalogen. Av det möjliggör grep med flaggan -e att specifikt bara filtrera fram alla de filnamn som innehåller .so. Av dessa tas allting efter .so bort med tr -d. Namnen skrivs sedan in i filen so-fil.txt i hemkatalogen med > </p>
-   <img src="./Pictures/so-fil.txt" alt="so-fil pic">
-  <p>Ge ett kommando som (endast) skriver ut hur många rader i filen som har ett namn som har bokstäverna "an" efter varandra.</p>
-  <p><b>grep -i -e 'an' resultat.txt -c</b></p>
-  <p>-i flaggan specificerar att grep -e 'an' inte ska skilja på gemener och versaler. -c flaggan gör att grep bara räknar så många rader som innehåller söktermen.</p>
-  <img src="./Pictures/grep_rader_an.png" alt="grep 7 rader an">
-  <p><b></b></p>
-  <p></p>
-  <p><b></b></p>
-  <p></p>
-  <p><b></b></p>
-  <p></p>
-  <p><b></b></p>
-  <p></p>
-  <p><b></b></p>
-  <p></p>
-  <p><b></b></p>
-  <p></p>
-  <p><b></b></p>
-  <p></p>
-  <p><b></b></p>
-  
-</div>
-
 
 <div class="col-8">
   <h1 id="TU21"> 2.1 Kataloger och filer</h1>
