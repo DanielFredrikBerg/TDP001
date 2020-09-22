@@ -161,6 +161,7 @@ li a {
 	<i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
+	<a href="#TM38">Terminalmejl V38</a>
 	<a href="#TM37">Terminalmejl V37</a>
 	<a href="#TM36">Terminalmejl V36</a>
 	<a href="#TM35">Terminalmejl V35</a>	
@@ -174,6 +175,26 @@ li a {
 <p><i>Kursiv text</i> representerar knapptryckningar.</p>
 <p>Varje deluppgift utgår ifrån att terminalen börjar i ~</p>
 <p><b>Fetstil text</b> indikerar text som skrivs i terminalfönstret</p>
+</div>
+
+<div class="col-9">
+  <h1 id="TM38">Terminalmejl V38</h1>
+  <p>Uppgift 1: Använd find för att lista alla python-filer som går att köra (har x-flaggan satt samt har med #! /usr/bin/env python3).</p>
+  <p><b>find . -name "*.py" -executable -exec grep -le "#! /usr/bin/env python3" {} \;</b></p>
+  <p>Förklaring:</p>
+  <ol>
+    <li>find . -name "*.py" Hittar alla filer från nuvarande katalog till alla underkataloger som är python-filer dvs de har ändelsen .py</li>
+    <li>-executable flaggan filtrerar bort filer som inte är exekverbara</li>
+    <li>-exec flaggan gör så att för varje fil hittad, representerad av {}, ska endast de filer där grep -e hittar strängen "#! /usr/bin/env python3" visas.</li>
+    <li>-l flaggan i grep uttrycket gör att grep returnerar filen som matchar sökmönstret istället för att returnera själva sökmönstret.</li>
+    <li>; markerar slutet för -exec argument raden. Den är escape:ad av ett \ tecken.</li>
+  </ol>
+  <p>Uppgift 2: Använd find för att hitta alla filer under din hemkatalog som är större än 5Mb stora. (detta är bra att kunna om man skulle få slut på quota på IDAs filsystem!) </p>
+  <p><b>find . -type f -size +5M -exec ls -sh {} \;</b></p>
+  <p>Förklaring: -size +5M flaggan sorterar finds resultat på filer som är större än 5Mb. Varje fil ska sedan visas med info om hur stor filen är, ls -s, och en människa ska kunna förstå det, ls -h, så storlekten skrivs ut i Mb, Gb, kb etc.</p>
+  <p>Uppgift 3: Använd Emacs och skapa ett macro som går igenom alla rader i filen resultat och tar bort allting förutom namnen. Information om hur du skapar macron i Emacs kan du hitta i dokumentationen eller föreläsningssliden från föreläsningnen som handlade om Emacs. </p>
+  <img src="./Pictures/emacs_macro.png" alt="emacs_macro">
+  
 </div>
 
 <div class="col-9">
@@ -208,18 +229,10 @@ li a {
 
   
   <p>Uppgift: Vad är HTTP request's? Läs på om detta och skriv en kort sammanfattning av vad det är och vad det används till. Koppla ditt svar till din nuvarande publicerade blogg. </p>
-  <p>Svar: HTTP requests skickas då en HTTP klient vill göra något med en HTTP server. Request meddelandet består av en request line, lite headers, en tomrad och kanske ett meddelande.</p>
+  <p>Svar: HTTP requests skickas då en HTTP klient vill kommunicera med en HTTP server. Request meddelandet består av en request line, lite headers, en tom rad och kanske ett meddelande. Request linen innehåller </p>
     
   <p>Uppgift: Beskriv skillnaden mellan metoden GET och POST förklara när man ska använda vilken. </p>
-  <p>Svar: POST används vid requests där skapande, förändring eller borttagande står i fokus. GET gör att requesten </p>
-  <p><b></b></p>
-  <p></p>
-  <p><b></b></p>
-  <p></p>
-  <p><b></b></p>
-  <p></p>
-  <p><b></b></p>
-  
+  <p>Svar: POST används vid requests där skapande, förändring eller borttagande är det som önskas. GET är bra när det bara ska visas något då requesten är en del av URL:en. </p>
 </div>
 
 
