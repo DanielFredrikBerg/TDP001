@@ -169,7 +169,10 @@ li a {
     </div>
   </div>
 
-
+  <div class="col-2">
+    <p>Vänster text</p>
+  </div>
+  
 <div class="col-8">
 <h1>Hur texten ska tolkas:</h1>
 <p><i>Kursiv text</i> representerar knapptryckningar.</p>
@@ -177,11 +180,15 @@ li a {
 <p><b>Fetstil text</b> indikerar text som skrivs i terminalfönstret</p>
 </div>
 
+<div class="col-2">
+    <p>Höger text</p>
+  </div>
+
 <div class="col-9">
   <h1 id="TM38">Terminalmejl V38</h1>
   <p>Uppgift 1: Använd find för att lista alla python-filer som går att köra (har x-flaggan satt samt har med #! /usr/bin/env python3).</p>
   <p><b>find . -name "*.py" -executable -exec grep -le "#! /usr/bin/env python3" {} \;</b></p>
-  <p>Förklaring:</p>
+    <p>Förklaring:</p>
   <ol>
     <li>find . -name "*.py" Hittar alla filer från nuvarande katalog till alla underkataloger som är python-filer dvs de har ändelsen .py</li>
     <li>-executable flaggan filtrerar bort filer som inte är exekverbara</li>
@@ -189,12 +196,13 @@ li a {
     <li>-l flaggan i grep uttrycket gör att grep returnerar filen som matchar sökmönstret istället för att returnera själva sökmönstret.</li>
     <li>; markerar slutet för -exec argument raden. Den är escape:ad av ett \ tecken.</li>
   </ol>
-  <p>Uppgift 2: Använd find för att hitta alla filer under din hemkatalog som är större än 5Mb stora. (detta är bra att kunna om man skulle få slut på quota på IDAs filsystem!) </p>
-  <p><b>find . -type f -size +5M -exec ls -sh {} \;</b></p>
-  <p>Förklaring: -size +5M flaggan sorterar finds resultat på filer som är större än 5Mb. Varje fil ska sedan visas med info om hur stor filen är, ls -s, och en människa ska kunna förstå det, ls -h, så storlekten skrivs ut i Mb, Gb, kb etc.</p>
-  <p>Uppgift 3: Använd Emacs och skapa ett macro som går igenom alla rader i filen resultat och tar bort allting förutom namnen. Information om hur du skapar macron i Emacs kan du hitta i dokumentationen eller föreläsningssliden från föreläsningnen som handlade om Emacs. </p>
-  <img src="./Pictures/emacs_macro.png" alt="emacs_macro">
-  
+  <p style="float:left">Uppgift 2: Använd find för att hitta alla filer under din hemkatalog som är större än 5Mb stora. (detta är bra att kunna om man skulle få slut på quota på IDAs filsystem!) </p>
+  <p style="float:left"><b>find . -type f -size +5M -exec ls -sh {} \;</b></p>
+  <p style="float:left">Förklaring: -size +5M flaggan sorterar finds resultat på filer som är större än 5Mb. Varje fil ska sedan visas med info om hur stor filen är, ls -s, och en människa ska kunna förstå det, ls -h, så storlekten skrivs ut i Mb, Gb, kb etc.</p>
+  <p style="float:left">Uppgift 3: Använd Emacs och skapa ett macro som går igenom alla rader i filen resultat och tar bort allting förutom namnen. Information om hur du skapar macron i Emacs kan du hitta i dokumentationen eller föreläsningssliden från föreläsningnen som handlade om Emacs. </p>
+  <p style="float:left">Svar: Öppna först filen <a href="./resultat.txt">resultat.txt</a> i emacs och se till att pekaren är i början av dokumentet genom att trycka <i>ALT</i> <i><</i> samtidigt. För att börja registerera macro i emacs tryck <i>Ctrl</i> <i>x</i> och sedan <i>Shift</i> <i>8</i>. Macrot som ska registreras är att först gå fram två ord (namnen) så tryck ned <i>Alt</i> <i>f</i> två gånger, ta bort resten av raden genom att trycka <i>Ctrl</i> <i>k</i> och sedan gå tillbaka två ord till början av raden genom att trycka <i>Alt</i> <i>b</i> två gånger och slutligen ned en rad genom att trycka <i>Ctrl</i> <i>n</i>. Macrot är nu färdigt så tryck först <i>Ctrl x</i> sedan <i>Shift</i> <i>9</i>.</p>
+<p style="float:left">Markera först hela texten genom att trycka <i>Ctrl</i> <i>x</i> sedan <i>Ctrl p</i>. När hela texten är markerad aktivera senaste makrot med <i>Ctrl x, Ctrl k, r</i> där kommatecknet särskiljer knapptryckningarna.</p>
+<h2 style="color: green; float: left">Klart!</h2>
 </div>
 
 <div class="col-9">
@@ -228,11 +236,12 @@ li a {
 </pre></div>
 
   
-  <p>Uppgift: Vad är HTTP request's? Läs på om detta och skriv en kort sammanfattning av vad det är och vad det används till. Koppla ditt svar till din nuvarande publicerade blogg. </p>
+  <p>Uppgift: Vad är HTTP requests? Läs på om detta och skriv en kort sammanfattning av vad det är och vad det används till. Koppla ditt svar till din nuvarande publicerade blogg. </p>
   <p>Svar: HTTP requests skickas då en HTTP klient vill kommunicera med en HTTP server. Request meddelandet består av en request line, lite headers, en tom rad och kanske ett meddelande. Request linen innehåller </p>
     
   <p>Uppgift: Beskriv skillnaden mellan metoden GET och POST förklara när man ska använda vilken. </p>
-  <p>Svar: POST används vid requests där skapande, förändring eller borttagande är det som önskas. GET är bra när det bara ska visas något då requesten är en del av URL:en. </p>
+  <p>Svar: POST används vid requests där skapande, förändring eller borttagande är det som önskas. GET är bra när det bara ska visas något då requesten är en del av URL:en. Stora misstag kan ske om POST funktionalitet adderas till GET requests då felskrivningar av URL:en kan resultera i oönskade icke reversibla förändringar av data.</p>
+  <h2 style="color: green">Klart!</h2>
 </div>
 
 
@@ -257,7 +266,8 @@ li a {
   <p>-i flaggan specificerar att grep -e 'an' inte ska skilja på gemener och versaler. -c flaggan gör att grep bara räknar så många rader som innehåller söktermen.</p>
   <img src="./Pictures/grep_rader_an.png" alt="grep 7 rader an">
   <p>Ladda upp ett latex-dokument till din www-pub katalog (/wwwpub/liuid/TDP001/) som kompilerats utifrån mallen i TDP003. Om du inte vet var dokumentmallen finns på kurssidan i TDP003 är det dags att titta igenom den kurssidan. I det kompilerade dokumentet skall du ha uppdaterat sidhuvud och sidfot till ditt namn. Länka till detta dokument från din blogg.</p>
-  <p><a href="./Kompilerad_mall_med_mitt_namn.pdf" target="_blank">Kompilerad_mall_med_mitt_namn.pdf</a></p>  
+<p><a href="./Kompilerad_mall_med_mitt_namn.pdf" target="_blank">Kompilerad_mall_med_mitt_namn.pdf</a></p>
+  <h2 style="color: green">Klart!</h2>
 </div>
 
 <div class="col-9">
