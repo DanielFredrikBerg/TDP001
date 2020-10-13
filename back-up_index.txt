@@ -5,12 +5,13 @@
 <meta charset="utf-8"/>
 <style>
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .header {
-  border: 1px solid red;
-  padding: 15px;
+    background: #A3FFB2;
+    border: 1px solid #1A651A;
+    padding: 20px;
 }
 
 /* Top Navigation bar */
@@ -99,6 +100,9 @@ ul.nb {
   display: table;
 }
 
+body {
+    background: #60FF92
+}
 
 li {
     float: left;
@@ -111,12 +115,21 @@ li a {
     border: 1px solid red;
 }
 
-
+.footer {
+    margin-top: 5px;
+    position: relative;
+    padding: 15px;
+    width: 100%;
+    background-color: #35AF7A;
+    color: white;
+    text-align: center;
+}
 
 [class*="col-"] {
-  float: left;
-  padding: 15px;
-  border: 1px solid red;
+    background-color: #59EBE5;
+    float: left;
+    padding: 15px;
+    margin-bottom: 5px;
 }
 
 .col-1 {width: 8.33%;}
@@ -169,20 +182,14 @@ li a {
     </div>
   </div>
 
-  <div class="col-2">
-    <p>Vänster text</p>
-  </div>
+
   
-<div class="col-8">
+<div class="col-9">
 <h1>Hur texten ska tolkas:</h1>
 <p><i>Kursiv text</i> representerar knapptryckningar.</p>
 <p>Varje deluppgift utgår ifrån att terminalen börjar i ~</p>
 <p><b>Fetstil text</b> indikerar text som skrivs i terminalfönstret</p>
 </div>
-
-<div class="col-2">
-    <p>Höger text</p>
-  </div>
 
 <div class="col-9">
   <h1 id="TM38">Terminalmejl V38</h1>
@@ -200,9 +207,11 @@ li a {
   <p style="float:left"><b>find . -type f -size +5M -exec ls -sh {} \;</b></p>
   <p style="float:left">Förklaring: -size +5M flaggan sorterar finds resultat på filer som är större än 5Mb. Varje fil ska sedan visas med info om hur stor filen är, ls -s, och en människa ska kunna förstå det, ls -h, så storlekten skrivs ut i Mb, Gb, kb etc.</p>
   <p style="float:left">Uppgift 3: Använd Emacs och skapa ett macro som går igenom alla rader i filen resultat och tar bort allting förutom namnen. Information om hur du skapar macron i Emacs kan du hitta i dokumentationen eller föreläsningssliden från föreläsningnen som handlade om Emacs. </p>
-  <p style="float:left">Svar: Öppna först filen <a href="./resultat.txt">resultat.txt</a> i emacs och se till att pekaren är i början av dokumentet genom att trycka <i>ALT</i> <i><</i> samtidigt. För att börja registerera macro i emacs tryck <i>Ctrl</i> <i>x</i> och sedan <i>Shift</i> <i>8</i>. Macrot som ska registreras är att först gå fram två ord (namnen) så tryck ned <i>Alt</i> <i>f</i> två gånger, ta bort resten av raden genom att trycka <i>Ctrl</i> <i>k</i> och sedan gå tillbaka två ord till början av raden genom att trycka <i>Alt</i> <i>b</i> två gånger och slutligen ned en rad genom att trycka <i>Ctrl</i> <i>n</i>. Macrot är nu färdigt så tryck först <i>Ctrl x</i> sedan <i>Shift</i> <i>9</i>.</p>
-<p style="float:left">Markera först hela texten genom att trycka <i>Ctrl</i> <i>x</i> sedan <i>Ctrl p</i>. När hela texten är markerad aktivera senaste makrot med <i>Ctrl x, Ctrl k, r</i> där kommatecknet särskiljer knapptryckningarna.</p>
-<h2 style="color: green; float: left">Klart!</h2>
+   <p style="float: left">Svar: Öppna först <a href="./resultat.txt">resultat.txt</a> i emacs och rör inte pekaren. Tryck sedan följande kombination tangenter efter varandra. Kombinationerna särskiljs med kommatecken.</p>
+  <p style="float: left">Ctrl x, Shift 8, Alt x, replace-regexp, ENTER, [0-9], ENTER, ENTER, Ctrl x, Shift 9</p>
+  <p style="float: left">Macrot är nu definerat och har aktiverats en gång. Därför har alla siffror försvunnit. För att se macrot in action tryck ned Ctrl, Shift och - samtidigt för att få tillbaka alla siffror. Tryck sedan Ctrl x och sedan e för att aktivera det senaste inspelade macrot.
+
+<h2 style="float: left; color: green">Klart!</h2>
 </div>
 
 <div class="col-9">
@@ -302,7 +311,7 @@ li a {
   <h2 style="color: green">Klart!</h2>
 </div>
 
-<div class="col-8">
+<div class="col-9">
   <h1 id="TU21"> 2.1 Kataloger och filer</h1>
   <p>Öppnar terminal genom att trycka <i>Ctrl ALT T</i> samtidigt</p>
   <p>Skapar katalogen ~/TDP004/lab1 med mkdir (make directory)</p>
@@ -346,7 +355,7 @@ li a {
   <h2 style="color: green">Klart!</h2>
 </div>
 
-<div class="col-8 center">
+<div class="col-9">
   <h1 id="TU22">2.2 Jobba via ssh</h1>
     <p>Öppna först terminalen genom att trycka <i>Ctrl ALT T</i> samtidigt. Anslut sedan till kontot på student-domänen via ssh i terminalen. </p>
     <p><b>ssh [liuid]@ssh.edu.liu.se</b></p>
@@ -410,7 +419,7 @@ li a {
 </div>
 
 
-<div class="col-8">
+<div class="col-9">
   <h1 id="TU23">2.3 Lösa en konflikt</h1>
     <p>Framkalla en merge konflikt genom att skriva något i den lokala TDP004/README.md filen</p>
     <p><b>echo "Här kommer det bli en merge konflikt!" > TDP004/README.md</b></p>
@@ -440,7 +449,7 @@ li a {
 </div>
 
 
-<div class="col-8">
+<div class="col-9">
   <h1 id="TU24">2.4 Rättigheter och skriva till fil</h1>
     <p>Gå in i katalogen TDP004/</p>
     <p><b>cd TDP004/</b></p>
@@ -465,7 +474,7 @@ li a {
 </div>
 
 
-<div class="col-8">
+<div class="col-9">
   <h1 id="TU25">2.5 Dokumentera katalogen</h1>
     <p>Flytta in i katalogen TDP004/</p>
     <p><b>cd TDP004/</b></p>
@@ -479,7 +488,7 @@ li a {
 </div>
 
 
-<div class="col-8">
+<div class="col-9">
   <h1 id="TU26">2.6 Smått och gott</h1>
     <p>Hitta alla filer som är körbara i din hemkatalog.</p>
     <p><b>find ~ -executable -type f</b></p>
@@ -487,5 +496,9 @@ li a {
 <h2 style="color: green">Klart!</h2>
 </div>
 </div>
+
+<div class="footer">
+  <p>Copyright 2020 @ danhu849</p>
+  </div>
 </body>
 </html>
