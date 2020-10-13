@@ -490,9 +490,15 @@ li a {
 
 <div class="col-9">
   <h1 id="TU26">2.6 Smått och gott</h1>
-    <p>Hitta alla filer som är körbara i din hemkatalog.</p>
+    <p>Uppgift: Hitta alla filer som är körbara i din hemkatalog.</p>
     <p><b>find ~ -executable -type f</b></p>
-    <p>find letar efter filer hierarkiskt nedåt från en specificerad katalog. flaggan -executable filtrerar fram alla exekverbara entiteter och -type f specificerar att entiteterna ska vara av typen filer. </p>
+  <p>find letar efter filer hierarkiskt nedåt från en specificerad katalog. flaggan -executable filtrerar fram alla exekverbara entiteter och -type f specificerar att entiteterna ska vara av typen filer. </p>
+  <p>Uppgift: Filtrera dessa filer ytterligare med begränsningen att de är python-filer och går att köra direkt med ‘./filnamn.py’</p>
+  <p><b>find ~ -name "*.py" -executable -exec grep -le "#! /usr/bin/env python3" {} \;</b></p>
+  <p>Svar: Frågan liknar uppgift 1 i Terminalmejlet för <a href="#TM38">vecka 38</a> och förklaringen. Skillnaden är att mappen terminalen befinner sig i har bytts ut mot hemkatalogen, ~.</p>
+  <p>Uppgift: I din hemkatalog hitta och skriv ut alla rader i alla filer (inte rekursivt ned i kataloger) som skulle räknas som kommentarer i python (börjar med #). Detta skall inkludera dolda filer.</p>
+  <p><b>find ~ -maxdepth 1 -exec grep -E "#.*" {} \;</b></p>
+  <p>Förklaring: find hittar alla filer i hemkatalogen, ~ och går inte ner vidare i någon katalog då maxdepth är 1. För varje fil grep:ar grep alla kommentarer.</p>
 <h2 style="color: green">Klart!</h2>
 </div>
 </div>
