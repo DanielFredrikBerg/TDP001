@@ -5,12 +5,13 @@
 <meta charset="utf-8"/>
 <style>
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .header {
-  border: 1px solid red;
-  padding: 15px;
+    background: #A3FFB2;
+    border: 1px solid #1A651A;
+    padding: 20px;
 }
 
 /* Top Navigation bar */
@@ -99,6 +100,9 @@ ul.nb {
   display: table;
 }
 
+body {
+    background: #60FF92
+}
 
 li {
     float: left;
@@ -111,12 +115,21 @@ li a {
     border: 1px solid red;
 }
 
-
+.footer {
+    margin-top: 5px;
+    position: relative;
+    padding: 15px;
+    width: 100%;
+    background-color: #35AF7A;
+    color: white;
+    text-align: center;
+}
 
 [class*="col-"] {
-  float: left;
-  padding: 15px;
-  border: 1px solid red;
+    background-color: #59EBE5;
+    float: left;
+    padding: 15px;
+    margin-bottom: 5px;
 }
 
 .col-1 {width: 8.33%;}
@@ -169,20 +182,14 @@ li a {
     </div>
   </div>
 
-  <div class="col-2">
-    <p>Vänster text</p>
-  </div>
+
   
-<div class="col-8">
+<div class="col-9">
 <h1>Hur texten ska tolkas:</h1>
 <p><i>Kursiv text</i> representerar knapptryckningar.</p>
 <p>Varje deluppgift utgår ifrån att terminalen börjar i ~</p>
 <p><b>Fetstil text</b> indikerar text som skrivs i terminalfönstret</p>
 </div>
-
-<div class="col-2">
-    <p>Höger text</p>
-  </div>
 
 <div class="col-9">
   <h1 id="TM38">Terminalmejl V38</h1>
@@ -489,5 +496,9 @@ li a {
 <h2 style="color: green">Klart!</h2>
 </div>
 </div>
+
+<div class="footer">
+  <p>Copyright 2020 @ danhu849</p>
+  </div>
 </body>
 </html>
