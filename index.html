@@ -399,18 +399,6 @@ li a {
     <p><b>git commit -am "added lab1 and lab2 directories with files"</b></p>
     <p>Försök pusha upp det.</p>
     <p><b>git push</b></p>
-    <p>Ifall det kommer upp något i stil med <i>Your name and e-mail address were configured automatically based on your username and hostname</i> betyder det att hostnamnet lagts till som email för inloggning på gitlab.liu.se. Detta är fel och ändras med:</p>
-    <p><b>git config --global --edit</b></p>
-    <img src="./Pictures/git_config_global_edit.png" alt="git_config pic">
-    <p>Du är nu i en editor i terminalen och kan ändra email till det för ditt gitlab konto. Flytta dig med piltangenterna. Glöm inte att ta bort # tecknena längst ut till vänster på raderna med "name =" och "email =" då de gör att raderna inte läses in.</p>
-    <img src="./Pictures/email_for_gitlab.png" alt="email for gitlab pic">
-    <p>Spara och stäng genom att trycka på knappen <i>F1</i></p>
-    <p>Sätt global user.name till "[liuid]"</p>
-    <p><b>git config --global user.name "danhu849"</b></p>
-    <p>Sätt global user.email till "[liuid]@gitlab.liu.se"</p>
-    <p><b>git config --global user.email danhu849@gitlab.liu.se</b></p>
-    <p>Push:a upp</p>
-    <p><b>git push</b></p>
     <p>Fyll i inloggningsuppgifter för gitlab.liu.se kontot</p>
     <p>Vänta på att det laddats upp.</p>
     <p>Logga ut från ssh med kommandot:</p>
@@ -455,8 +443,10 @@ li a {
     <p><b>cd TDP004/</b></p>
     <p>Skapa filen test.py i katalogen TDP004.</p>
     <p><b>touch test.py</b></p>
-    <p>Skriv ett enkelt program (ex-empelvis hello world) och gör så filen kan köras direkt med kommandot./test.py   Öppna med test.py i nano och skriv överst: #!/usr/bin/env python3</p>
-    <p>Strängen är en s.k. shebang och gör så att operativsystemet känner igen filen som ett python3 program. Filen blir också lättare att flytta mellan olika maskiner ifall python3 är installerat på olika ställen.</p>
+    <p>Skriv ett enkelt program (exempelvis hello world) och gör så filen kan köras direkt med kommandot ./test.py  Öppna med test.py i nano och skriv överst: #!/usr/bin/env python3</p>
+  <p>Strängen är en s.k. shebang och gör så att operativsystemet känner igen filen som ett python3 program. Filen blir också lättare att flytta mellan olika maskiner ifall python3 är installerat på olika ställen.</p>
+  <p>Slutligen, gör programmet exekverbart med kommandot chmod och se till att lägga till flaggan +x för filen.</p>
+  <p><b>chmod u+x test.py</b></p>
     <p>Lägg med kommandot ‘echo’ till följande kommentar i test.py: “Detta är en kommentar som skapats med echo”</p>
     <p><b>echo #Detta är en kommentar som skapats med echo >> test.py</b></p>
     <p>Kopiera underkatalogen lab2 så du får en ny katalog lab3</p>

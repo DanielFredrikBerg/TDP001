@@ -1,0 +1,12 @@
+<p>Ifall det kommer upp något i stil med <i>Your name and e-mail address were configured automatically based on your username and hostname</i> betyder det att hostnamnet lagts till som email för inloggning på gitlab.liu.se. Detta är fel och ändras med:</p>
+    <p><b>git config --global --edit</b></p>
+    <img src="./Pictures/git_config_global_edit.png" alt="git_config pic">
+    <p>Du är nu i en editor i terminalen och kan ändra email till det för ditt gitlab konto. Flytta dig med piltangenterna. Glöm inte att ta bort # tecknena längst ut till vänster på raderna med "name =" och "email =" då de gör att raderna inte läses in.</p>
+    <img src="./Pictures/email_for_gitlab.png" alt="email for gitlab pic">
+    <p>Spara och stäng genom att trycka på knappen <i>F1</i></p>
+    <p>Sätt global user.name till "[liuid]"</p>
+    <p><b>git config --global user.name "danhu849"</b></p>
+    <p>Sätt global user.email till "[liuid]@gitlab.liu.se"</p>
+    <p><b>git config --global user.email danhu849@gitlab.liu.se</b></p>
+    <p>Push:a upp</p>
+    <p><b>git push</b></p>
